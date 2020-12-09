@@ -6,6 +6,7 @@ function App() {
     <>
       <h1>hello world</h1>
       <p>hello world</p>
+      <p className="vl-icon-wrapper"><span className="vl-icon vl-icon--light vl-vi vl-vi-chat-help" aria-hidden="true"></span></p>
     </>
   );
 }
