@@ -10,7 +10,16 @@ import './MultiSelectRepro.scss';
 
 export default function MultiSelect() {
   const [ isDisabled, setDisabled ] = useState(false);
+  const [ autoDress, setAutoDress ] = useState(true);
   const reference = useRef();
+
+  function toggleDisabled(value) {
+    setDisabled(value);
+    if(autoDress) {
+      undress();
+      dress();
+    }
+  }
 
   useEffect(() => {
     dress();
@@ -38,8 +47,17 @@ export default function MultiSelect() {
           </select>
         </div>
       </div>
+      <div className="state">
+        <div>Duitsland is disabled: {isDisabled ? "Yes" : "No"}</div>
+        <div>Automatically dress/undress on disable: {autoDress ? "Yes" : "No"}</div>
+      </div>
       <div className="actions">
-        <button className="vl-button vl-form-col" onClick={ () => setDisabled(!isDisabled) }>
+        <button className="vl-button vl-form-col" onClick={ () => setAutoDress(!autoDress) }>
+          <span className="vl-button__label">
+            { autoDress ? 'Do not automatically undress+dress on disable' : 'Automatically undress+dress on disable' }
+          </span>
+        </button>
+        <button className="vl-button vl-form-col" onClick={ () => toggleDisabled(!isDisabled) }>
           <span className="vl-button__label">
             { isDisabled ? 'Enable Duitsland' : 'Disable Duitsland' }
           </span>
