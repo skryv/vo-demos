@@ -25,11 +25,11 @@ export default function MultiSelect() {
   }
 
   return (
-    <div className="vl-form-grid">
-      <label className="vl-form__label vl-form-col--2-12" htmlFor="stuff">
+    <div className="multichoice">
+      <label className="vl-form__label" htmlFor="stuff">
         select one
       </label>
-      <div className="vl-form__input vl-form-col--10-12">
+      <div className="vl-form__input">
         <div className="js-vl-multiselect">
           <select id="stuff" multiple name="multiselect" className="vl-multiselect" data-vl-multiselect ref={ reference }>
             <option value="België">België</option>
