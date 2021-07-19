@@ -6,6 +6,7 @@ import "@govflanders/vl-ui-util";
 
 import MultiSelectDisabled from "./MultiSelectDisabled";
 import MultiSelectSorting from "./MultiSelectSorting";
+import SelectWithoutDefaultValue from "./SelectWithoutDefaultValue";
 
 function App() {
   return (
@@ -13,6 +14,11 @@ function App() {
       <div>
         <nav>
           <ul>
+            <li>
+              <Link to="/select-without-default-value">
+                Select: the first item in the list is by default always selected
+              </Link>
+            </li>
             <li>
               <Link to="/multi-select-disabled">
                 MultiSelect: disable an option dynamically
@@ -26,6 +32,9 @@ function App() {
           </ul>
         </nav>
         <Switch>
+          <Route path="/select-without-default-value">
+            <SelectWithoutDefaultValue />
+          </Route>
           <Route path="/multi-select-disabled">
             <MultiSelectDisabled />
           </Route>
