@@ -8,6 +8,7 @@ import DoubleModal from "./DoubleModal";
 import MultiSelectDisabled from "./MultiSelectDisabled";
 import MultiSelectSorting from "./MultiSelectSorting";
 import SelectWithoutDefaultValue from "./SelectWithoutDefaultValue";
+import Tooltips from "./Tooltips";
 
 function App() {
   return (
@@ -35,6 +36,11 @@ function App() {
                 Double modal: a modal that opens on top of a modal
               </Link>
             </li>
+            <li>
+              <Link to="/tooltips">
+                Tooltips: tooltips keep being added to the DOM
+              </Link>
+            </li>
           </ul>
         </nav>
         <Switch>
@@ -58,6 +64,11 @@ function App() {
               <DoubleModal />
             </ContentWrapper>
           </Route>
+          <Route path="/tooltips">
+            <ContentWrapper>
+              <Tooltips />
+            </ContentWrapper>
+          </Route>
           <Route path="/">
             <ContentWrapper>
               <p>Please pick one of the demo's in the navigation menu above</p>
@@ -75,7 +86,7 @@ function ContentWrapper({ children }) {
       style={{
         marginLeft: "20rem",
         marginRight: "20rem",
-        marginTop: "25rem",
+        marginTop: "15rem",
       }}
     >
       {children}
