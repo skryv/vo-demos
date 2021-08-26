@@ -5,11 +5,11 @@ $vl-font-location: "~@govflanders/vl-ui-core/dist/font/flanders/";
 @import "~@govflanders/vl-ui-core/src/scss/core";
 
 // ...components...
-@import "~@govflanders/vl-ui-icon/src/scss/icon";
 @import "~@govflanders/vl-ui-button/src/scss/button";
+@import "~@govflanders/vl-ui-icon/src/scss/icon";
+@import "~@govflanders/vl-ui-modal/src/scss/modal";
 @import "~@govflanders/vl-ui-pill/src/scss/pill";
 @import "~@govflanders/vl-ui-select/src/scss/select";
-@import "~@govflanders/vl-ui-multiselect/src/scss/multiselect";
 
 // ...close with utils
 @import "~@govflanders/vl-ui-util/src/scss/util";

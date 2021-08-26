@@ -1,6 +1,6 @@
 # vo-demos
 
-This package contains a small React project to test out some issues we found in using the css and javascript by the VO Webuniversum.
+This package contains a small React project to test out some components of the VO Webuniversum.
 
 ## Installation
 
