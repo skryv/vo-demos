@@ -7,18 +7,39 @@ import "@govflanders/vl-ui-progress-bar";
 import "@govflanders/vl-ui-tooltip";
 import "@govflanders/vl-ui-util";
 
+const initialPanes = [
+  { id: 1, title: "First pane", content: "Content of first pane" },
+  { id: 2, title: "Second pane", content: "Content of second pane" },
+  { id: 3, title: "Third pane", content: "Content of third pane" },
+];
+
 export default function Tooltips() {
+  const [counter, setCounter] = useState(0);
   const [activePaneIndex, setActivePaneIndex] = useState(0);
+  const [panes, setPanes] = useState([
+    ...initialPanes,
+    {
+      id: 4,
+      title: counter,
+      content: "Content of fourth pane",
+    },
+  ]);
 
   useEffect(() => {
     window.vl.tooltip.dressAll();
-  }, []);
+  }, [panes]);
 
-  const panes = [
-    { id: 1, title: "First pane", content: "Content of first pane" },
-    { id: 2, title: "Second pane", content: "Content of second pane" },
-    { id: 3, title: "Third pane", content: "Content of third pane" },
-  ];
+  function increaseCounter() {
+    setPanes([
+      ...initialPanes,
+      {
+        id: 4,
+        title: counter + 1,
+        content: "Content of fourth pane",
+      },
+    ]);
+    setCounter(counter + 1);
+  }
 
   return (
     <div>
@@ -28,11 +49,13 @@ export default function Tooltips() {
         }}
       >
         <p>
-          Problem: We have a wizard with a progress bar on top. The progress bar
-          has tooltips for each step, showing the title of the connected pane.
-          When you navigate through the progress bar a lot, multiple of these
-          tooltips are added to the DOM, resulting in a very dark shadow around
-          the tooltip.
+          Problem: We have a wizard with a progress bar on top. In some cases,
+          the progress bar needs to change, based on other changes in the page.
+          In this case, the tooltip of the fourth section shows the number of
+          changes to the input value. Every time a change is triggered, we need
+          to dress the tooltips again, or they don't update. However, this seems
+          to add new tooltips, making their shadow to appear darker and darker.
+          What would be a better way to change the content of a tooltip?
         </p>
         <a
           href="https://github.com/skryv/vo-demos/blob/main/src/Tooltips.jsx"
@@ -82,7 +105,16 @@ export default function Tooltips() {
                   <section key={pane.id} className="vl-wizard__pane">
                     {/* content */}
                     <div data-vl-wizard-focus style={{ marginBottom: "3rem" }}>
-                      {pane.content}
+                      <div>{pane.content}</div>
+                      <div>
+                        <div>
+                          Current counter: {counter} (also see tooltip of fourth
+                          section)
+                        </div>
+                        <button onClick={increaseCounter}>
+                          Increase counter
+                        </button>
+                      </div>
                     </div>
 
                     {/* navigation */}
