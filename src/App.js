@@ -30,15 +30,15 @@ function App() {
               <Link to="/multi-select-sorting">
                 MultiSelect: options are automatically sorted
               </Link>
-            </li> */}
-            <li>
-              <Link to="/double-modal">
-                Double modal: a modal that opens on top of a modal
-              </Link>
             </li>
             <li>
               <Link to="/tooltips">
                 Tooltips: tooltips keep being added to the DOM
+              </Link>
+            </li> */}
+            <li>
+              <Link to="/double-modal">
+                Double modal: a modal that opens on top of a modal
               </Link>
             </li>
           </ul>

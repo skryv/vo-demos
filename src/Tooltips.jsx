@@ -26,6 +26,7 @@ export default function Tooltips() {
   ]);
 
   useEffect(() => {
+    window.vl.tooltip.undressAll(); // this line fixes the problem
     window.vl.tooltip.dressAll();
   }, [panes]);
 
@@ -64,6 +65,16 @@ export default function Tooltips() {
         >
           Go to the code
         </a>
+      </div>
+      <div
+        style={{
+          marginBottom: "5rem",
+        }}
+      >
+        <p class="vl-u-mark vl-u-mark--success">
+          Fixed by: Undressing the tooltips every time before dressing them
+          again
+        </p>
       </div>
 
       <div>
