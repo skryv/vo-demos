@@ -13,6 +13,9 @@ $vl-font-location: "~@govflanders/vl-ui-core/dist/font/flanders/";
 @import "~@govflanders/vl-ui-select/src/scss/select";
 @import "~@govflanders/vl-ui-tooltip/src/scss/tooltip";
 @import "~@govflanders/vl-ui-wizard/src/scss/wizard";
+@import "~@govflanders/vl-ui-popover/src/scss/popover";
+@import "~@govflanders/vl-ui-link/src/scss/link";
+@import "~@govflanders/vl-ui-link-list/src/scss/link-list";
 
 // ...close with utils
 @import "~@govflanders/vl-ui-util/src/scss/util";

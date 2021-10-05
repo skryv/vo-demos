@@ -9,6 +9,7 @@ import MultiSelectDisabled from "./MultiSelectDisabled";
 import MultiSelectSorting from "./MultiSelectSorting";
 import SelectWithoutDefaultValue from "./SelectWithoutDefaultValue";
 import Tooltips from "./Tooltips";
+import Popover from "./Popover";
 
 function App() {
   return (
@@ -44,6 +45,11 @@ function App() {
           </ul>
         </nav>
         <Switch>
+          <Route path="/popover">
+            <ContentWrapper>
+              <Popover />
+            </ContentWrapper>
+          </Route>
           <Route path="/select-without-default-value">
             <ContentWrapper>
               <SelectWithoutDefaultValue />
