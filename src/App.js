@@ -36,6 +36,9 @@ function App() {
               <Link to="/tooltips">
                 Tooltips: tooltips keep being added to the DOM
               </Link>
+            </li>
+            <li>
+              <Link to="/popover">Popover: button inside a popover</Link>
             </li> */}
             <li>
               <Link to="/double-modal">
