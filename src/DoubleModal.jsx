@@ -55,19 +55,19 @@ export default function DoubleModal() {
             </button>
 
             {/* Content */}
-            <h2 class="vl-modal-dialog__title" id="modal-toggle-1-title">
+            <h2 className="vl-modal-dialog__title" id="modal-toggle-1-title">
               First modal
             </h2>
             <div
-              class="vl-modal-dialog__content"
+              className="vl-modal-dialog__content"
               id="modal-toggle-1-description"
             >
               Content of first modal
             </div>
-            <div class="vl-modal-dialog__footer">
-              <div class="vl-action-group">
-                <button class="vl-button" onClick={() => openSecondModal()}>
-                  <span class="vl-button__label">Open second modal</span>
+            <div className="vl-modal-dialog__footer">
+              <div className="vl-action-group">
+                <button className="vl-button" onClick={() => openSecondModal()}>
+                  <span className="vl-button__label">Open second modal</span>
                 </button>
               </div>
             </div>
@@ -104,11 +104,11 @@ export default function DoubleModal() {
               <span className="vl-u-visually-hidden">Close</span>
             </button>
             {/* Content */}
-            <h2 class="vl-modal-dialog__title" id="modal-toggle-1-title">
+            <h2 className="vl-modal-dialog__title" id="modal-toggle-1-title">
               Second modal
             </h2>
             <div
-              class="vl-modal-dialog__content"
+              className="vl-modal-dialog__content"
               id="modal-toggle-1-description"
             >
               Content of second modal
@@ -121,6 +121,7 @@ export default function DoubleModal() {
 
   return (
     <div>
+      {/* Problem statement */}
       <div
         style={{
           marginBottom: "5rem",
@@ -144,6 +145,20 @@ export default function DoubleModal() {
         </a>
       </div>
 
+      {/* Current status */}
+      <div
+        style={{
+          marginBottom: "5rem",
+        }}
+      >
+        <p class="vl-u-mark vl-u-mark--success">
+          (2) Fixed by: Upgrading to Webuniversum @govflanders/vl-ui-modal
+          v8.0.0
+        </p>
+        <p class="vl-u-mark vl-u-mark--warning">(1) Not fixed</p>
+      </div>
+
+      {/* Demo */}
       <div>
         <p>Demo:</p>
         <button className="vl-button" onClick={() => openFirstModal()}>
