@@ -154,13 +154,16 @@ export default function DoubleModal() {
         <p>
           <p>Current status:</p>
           <p>
+            <p>
+              <span class="vl-u-mark vl-u-mark--success">
+                (1) Fixed by: Upgrading to Webuniversum @govflanders/vl-ui-modal
+                v11.0.5
+              </span>
+            </p>
             <span class="vl-u-mark vl-u-mark--success">
               (2) Fixed by: Upgrading to Webuniversum @govflanders/vl-ui-modal
               v8.0.0
             </span>
-          </p>
-          <p>
-            <span class="vl-u-mark vl-u-mark--warning">(1) Not fixed</span>
           </p>
         </p>
       </div>

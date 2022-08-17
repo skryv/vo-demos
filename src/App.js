@@ -39,12 +39,12 @@ function App() {
               </Link>
             </li>
             <li>
-              <Link to="/popover">Popover: button inside a popover</Link>
-            </li> */}
-            <li>
               <Link to="/double-modal">
                 Double modal: a modal that opens on top of a modal
               </Link>
+            </li> */}
+            <li>
+              <Link to="/popover">Popover: button inside a popover</Link>
             </li>
             <li>
               <Link to="/popover-modifier-classes">
