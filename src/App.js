@@ -10,6 +10,7 @@ import MultiSelectSorting from "./MultiSelectSorting";
 import SelectWithoutDefaultValue from "./SelectWithoutDefaultValue";
 import Tooltips from "./Tooltips";
 import Popover from "./Popover";
+import PopoverModifierClasses from "./PopoverModifierClasses";
 
 function App() {
   return (
@@ -45,9 +46,19 @@ function App() {
                 Double modal: a modal that opens on top of a modal
               </Link>
             </li>
+            <li>
+              <Link to="/popover-modifier-classes">
+                Popover: modifier classes
+              </Link>
+            </li>
           </ul>
         </nav>
         <Switch>
+          <Route path="/popover-modifier-classes">
+            <ContentWrapper>
+              <PopoverModifierClasses />
+            </ContentWrapper>
+          </Route>
           <Route path="/popover">
             <ContentWrapper>
               <Popover />
