@@ -99,9 +99,12 @@ export default function Popover() {
           marginBottom: "5rem",
         }}
       >
-        <p class="vl-u-mark vl-u-mark--warning">
-          Workaround by not using the VO Javascript, but only their styling. Not
-          ideal, because we use some of their internal classes.
+        <p>
+          <span>Current status: </span>
+          <span class="vl-u-mark vl-u-mark--warning">
+            Workaround by not using the VO Javascript, but only their styling.
+            Not ideal, because we use some of their internal classes.
+          </span>
         </p>
       </div>
 

@@ -151,11 +151,18 @@ export default function DoubleModal() {
           marginBottom: "5rem",
         }}
       >
-        <p class="vl-u-mark vl-u-mark--success">
-          (2) Fixed by: Upgrading to Webuniversum @govflanders/vl-ui-modal
-          v8.0.0
+        <p>
+          <p>Current status:</p>
+          <p>
+            <span class="vl-u-mark vl-u-mark--success">
+              (2) Fixed by: Upgrading to Webuniversum @govflanders/vl-ui-modal
+              v8.0.0
+            </span>
+          </p>
+          <p>
+            <span class="vl-u-mark vl-u-mark--warning">(1) Not fixed</span>
+          </p>
         </p>
-        <p class="vl-u-mark vl-u-mark--warning">(1) Not fixed</p>
       </div>
 
       {/* Demo */}

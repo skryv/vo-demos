@@ -45,14 +45,14 @@ export default function MultiSelect() {
   return (
     <div
       style={{
-        "margin-left": "20rem",
-        "margin-right": "20rem",
-        "margin-top": "25rem",
+        marginLeft: "20rem",
+        marginRight: "20rem",
+        marginTop: "25rem",
       }}
     >
       <p
         style={{
-          "margin-bottom": "5rem",
+          marginBottom: "5rem",
         }}
       >
         Problem: These MultiSelects have an option for each day of the week. The

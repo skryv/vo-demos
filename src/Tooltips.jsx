@@ -71,9 +71,12 @@ export default function Tooltips() {
           marginBottom: "5rem",
         }}
       >
-        <p class="vl-u-mark vl-u-mark--success">
-          Fixed by: Undressing the tooltips every time before dressing them
-          again
+        <p>
+          <span>Current status: </span>
+          <span class="vl-u-mark vl-u-mark--success">
+            Fixed by: Undressing the tooltips every time before dressing them
+            again
+          </span>
         </p>
       </div>
 
