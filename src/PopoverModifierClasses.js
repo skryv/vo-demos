@@ -277,9 +277,10 @@ const PopoverWithRef = forwardRef(
             "js-vl-popover--open": forceOpen || isOpen,
           }
         )}
+        data-vl-popover="true"
       >
         <button
-          className="vl-button vl-button--icon-before vl-popover-toggle"
+          className="vl-button vl-button--icon-before js-vl-popover__toggle vl-popover-toggle"
           type="button"
           aria-expanded="false"
           onClick={(e) => {
@@ -314,14 +315,6 @@ const PopoverWithRef = forwardRef(
 );
 
 function PopoverWithVOJavascript({ forceOpen, position, size, children }) {
-  useEffect(() => {
-    setTimeout(() => {
-      // a timeout is required to make sure the popovers are present before we try to dress them
-      // all VO Javascript packages Nod to be dressed after render or they will not be activated
-      window.vl.modal.dressAll();
-    }, 100);
-  }, []);
-
   return (
     <div
       className={classNames(
@@ -357,3 +350,7 @@ function PopoverWithVOJavascript({ forceOpen, position, size, children }) {
     </div>
   );
 }
+
+setTimeout(() => {
+  window.vl.popover.dressAll()
+});
