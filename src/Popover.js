@@ -33,15 +33,14 @@ export default function Popover() {
         <div className="vl-popover__content">
           <ul className="vl-popover__link-list">
             <li className="vl-popover__link-list__item">
-              <a
-                role="button"
+              <button
                 className="vl-button"
                 onClick={(e) => {
                   console.log("You clicked yes!");
                 }}
               >
                 <span className="vl-button__label">Yes</span>
-              </a>
+              </button>
             </li>
             <li className="vl-popover__link-list__item">
               <button
@@ -101,7 +100,7 @@ export default function Popover() {
       >
         <p>
           <span>Current status: </span>
-          <span class="vl-u-mark vl-u-mark--warning">
+          <span className="vl-u-mark vl-u-mark--warning">
             Workaround by not using the VO Javascript, but only their styling.
             Not ideal, because we use some of their internal classes.
           </span>
