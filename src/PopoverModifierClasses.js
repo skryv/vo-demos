@@ -13,8 +13,8 @@ import "@govflanders/vl-ui-util";
 
 export const popoverPositions = {
   LEFT: "vl-popover--align-left",
-  RIGHT: "vl-popover--align-center",
-  CENTER: "vl-popover--align-right",
+  RIGHT: "vl-popover--align-right",
+  CENTER: "vl-popover--align-center",
 };
 
 export const popoverSizes = {
@@ -23,7 +23,6 @@ export const popoverSizes = {
 };
 
 export default function PopoverModifierClasses() {
-  const [forceOpen, setForceOpen] = useState(false);
   const popoverRef1 = useRef();
   const popoverRef2 = useRef();
   const popoverRef3 = useRef();
@@ -41,100 +40,78 @@ export default function PopoverModifierClasses() {
 
   function demo() {
     return (
-      <>
-        <label>
-          <input
-            type="checkbox"
-            checked={forceOpen}
-            onChange={() => setForceOpen(!forceOpen)}
-          />
-          Force popovers open
-        </label>
-
-        <table>
-          <thead>
-            <tr>
-              <th></th>
-              <th style={thStyle}>Popover with Reacts Ref system</th>
-              <th style={thStyle}>Popover with VO Javascript</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style={tdStyle}>vl-popover--align-left</td>
-              <td style={tdStyle}>
-                <PopoverWithRef
-                  forceOpen={forceOpen}
-                  ref={popoverRef1}
-                  position="LEFT"
-                >
-                  <PopoverContent popoverRef={popoverRef1} />
-                </PopoverWithRef>
-              </td>
-              <td style={tdStyle}>
-                <PopoverWithVOJavascript forceOpen={forceOpen} position="LEFT">
-                  <PopoverContent popoverRef={popoverRef1} />
-                </PopoverWithVOJavascript>
-              </td>
-            </tr>
-            <tr>
-              <td style={tdStyle}>vl-popover--align-center</td>
-              <td style={tdStyle}>
-                <PopoverWithRef
-                  forceOpen={forceOpen}
-                  ref={popoverRef2}
-                  position="CENTER"
-                >
-                  <PopoverContent popoverRef={popoverRef2} />
-                </PopoverWithRef>
-              </td>
-              <td style={tdStyle}>
-                <PopoverWithVOJavascript
-                  forceOpen={forceOpen}
-                  position="CENTER"
-                >
-                  <PopoverContent popoverRef={popoverRef2} />
-                </PopoverWithVOJavascript>
-              </td>
-            </tr>
-            <tr>
-              <td style={tdStyle}>vl-popover--align-right</td>
-              <td style={tdStyle}>
-                <PopoverWithRef
-                  forceOpen={forceOpen}
-                  ref={popoverRef3}
-                  position="RIGHT"
-                >
-                  <PopoverContent popoverRef={popoverRef3} />
-                </PopoverWithRef>
-              </td>
-              <td style={tdStyle}>
-                {" "}
-                <PopoverWithVOJavascript forceOpen={forceOpen} position="RIGHT">
-                  <PopoverContent popoverRef={popoverRef3} />
-                </PopoverWithVOJavascript>
-              </td>
-            </tr>
-            <tr>
-              <td style={tdStyle}>vl-popover--large</td>
-              <td style={tdStyle}>
-                <PopoverWithRef
-                  forceOpen={forceOpen}
-                  ref={popoverRef4}
-                  size="LARGE"
-                >
-                  <PopoverContent popoverRef={popoverRef4} />
-                </PopoverWithRef>
-              </td>
-              <td style={tdStyle}>
-                <PopoverWithVOJavascript forceOpen={forceOpen} size="LARGE">
-                  <PopoverContent popoverRef={popoverRef4} />
-                </PopoverWithVOJavascript>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th style={thStyle}>Popover with Reacts Ref system</th>
+            <th style={thStyle}>Popover with VO Javascript</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style={tdStyle}>vl-popover--align-left</td>
+            <td style={tdStyle}>
+              <PopoverWithRef ref={popoverRef1} position="LEFT" name="Ref-left">
+                <PopoverContentWithRef popoverRef={popoverRef1} />
+              </PopoverWithRef>
+            </td>
+            <td style={tdStyle}>
+              <PopoverWithVOJavascript position="LEFT" name="VO-left">
+                <PopoverContentWithVOJavascript />
+              </PopoverWithVOJavascript>
+            </td>
+          </tr>
+          <tr>
+            <td style={tdStyle}>vl-popover--align-center</td>
+            <td style={tdStyle}>
+              <PopoverWithRef
+                ref={popoverRef2}
+                position="CENTER"
+                name="Ref-center"
+              >
+                <PopoverContentWithRef popoverRef={popoverRef2} />
+              </PopoverWithRef>
+            </td>
+            <td style={tdStyle}>
+              <PopoverWithVOJavascript position="CENTER" name="VO-center">
+                <PopoverContentWithVOJavascript />
+              </PopoverWithVOJavascript>
+            </td>
+          </tr>
+          <tr>
+            <td style={tdStyle}>vl-popover--align-right</td>
+            <td style={tdStyle}>
+              <PopoverWithRef
+                ref={popoverRef3}
+                position="RIGHT"
+                name="Ref-right"
+              >
+                <PopoverContentWithRef popoverRef={popoverRef3} />
+              </PopoverWithRef>
+            </td>
+            <td style={tdStyle}>
+              {" "}
+              <PopoverWithVOJavascript position="RIGHT" name="VO-right">
+                <PopoverContentWithVOJavascript />
+              </PopoverWithVOJavascript>
+            </td>
+          </tr>
+          <tr>
+            <td style={tdStyle}>vl-popover--large</td>
+            <td style={tdStyle}>
+              <PopoverWithRef ref={popoverRef4} size="LARGE" name="Ref-large">
+                <PopoverContentWithRef popoverRef={popoverRef4} />
+              </PopoverWithRef>
+            </td>
+            <td style={tdStyle}>
+              <PopoverWithVOJavascript size="LARGE" name="VO-large">
+                <PopoverContentWithVOJavascript />
+              </PopoverWithVOJavascript>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     );
   }
 
@@ -210,7 +187,7 @@ export default function PopoverModifierClasses() {
   );
 }
 
-function PopoverContent({ popoverRef }) {
+function PopoverContentWithRef({ popoverRef }) {
   return (
     <>
       <h4 className="vl-u-text--bold">Popover content</h4>
@@ -219,7 +196,7 @@ function PopoverContent({ popoverRef }) {
         <button
           className="vl-button"
           onClick={() => {
-            console.log("Yes");
+            console.log("You clicked yes!");
             popoverRef.current.closePopover();
           }}
         >
@@ -228,7 +205,7 @@ function PopoverContent({ popoverRef }) {
         <button
           className="vl-button vl-button--secondary"
           onClick={() => {
-            console.log("No");
+            console.log("You clicked no!");
             popoverRef.current.closePopover();
           }}
         >
@@ -239,88 +216,60 @@ function PopoverContent({ popoverRef }) {
   );
 }
 
-const PopoverWithRef = forwardRef(
-  ({ forceOpen, position, size, children }, ref) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const wrapperRef = useRef(null);
+function PopoverContentWithVOJavascript() {
+  return (
+    <>
+      <h4 className="vl-u-text--bold">Popover content</h4>
 
-    useEffect(() => {
-      function handleClickOutside(event) {
-        if (
-          wrapperRef.current &&
-          !wrapperRef.current.contains(event.target) &&
-          isOpen
-        ) {
-          setIsOpen(false);
-        }
-      }
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
-      };
-    }, [ref, isOpen]);
-
-    useImperativeHandle(ref, () => ({
-      closePopover() {
-        setIsOpen(false);
-      },
-    }));
-
-    return (
-      <div
-        className={classNames(
-          "vl-popover",
-          "vl-popover--single",
-          popoverPositions[position] || popoverPositions.RIGHT,
-          popoverSizes[size] || popoverSizes.NORMAL,
-          {
-            "js-vl-popover--open": forceOpen || isOpen,
-          }
-        )}
-      >
+      <div className="vl-action-group vl-action-group--align-right vl-u-spacer-top--xsmall">
         <button
-          className="vl-button vl-button--icon-before vl-popover-toggle"
-          type="button"
-          aria-expanded="false"
+          className="vl-button"
           onClick={(e) => {
             e.stopPropagation();
-            setIsOpen(true);
-          }}
-          onKeyPress={(e) => {
-            e.stopPropagation();
-            setIsOpen(true);
+            console.log("You clicked yes!");
           }}
         >
-          Open popover
+          <span className="vl-button__label">Yes</span>
         </button>
-        <div
-          className={classNames("vl-popover__content", {
-            "vl-popover__content--close": isOpen,
-          })}
+        <button
+          className="vl-button vl-button--secondary"
+          onClick={(e) => {
+            e.stopPropagation();
+            console.log("You clicked no!");
+          }}
         >
-          <div ref={wrapperRef} className="vl-popover__content-overflow">
-            {children}
-          </div>
-          <button
-            className="vl-popover__close-btn vl-vi vl-vi-cross"
-            tabIndex="0"
-          >
-            <span className="vl-u-visually-hidden">Close popover</span>
-          </button>
-        </div>
+          <span className="vl-button__label">No</span>
+        </button>
       </div>
-    );
-  }
-);
+    </>
+  );
+}
 
-function PopoverWithVOJavascript({ forceOpen, position, size, children }) {
+const PopoverWithRef = forwardRef(({ position, size, name, children }, ref) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const wrapperRef = useRef(null);
+
   useEffect(() => {
-    setTimeout(() => {
-      // a timeout is required to make sure the popovers are present before we try to dress them
-      // all VO Javascript packages Nod to be dressed after render or they will not be activated
-      window.vl.modal.dressAll();
-    }, 100);
-  }, []);
+    function handleClickOutside(event) {
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(event.target) &&
+        isOpen
+      ) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ref, isOpen]);
+
+  useImperativeHandle(ref, () => ({
+    closePopover() {
+      setIsOpen(false);
+    },
+  }));
 
   return (
     <div
@@ -330,17 +279,83 @@ function PopoverWithVOJavascript({ forceOpen, position, size, children }) {
         popoverPositions[position] || popoverPositions.RIGHT,
         popoverSizes[size] || popoverSizes.NORMAL,
         {
-          "js-vl-popover--open": forceOpen,
+          "js-vl-popover--open": isOpen,
         }
       )}
-      data-vl-popover
+    >
+      <button
+        className="vl-button vl-button--icon-before vl-popover-toggle"
+        type="button"
+        aria-expanded="false"
+        onClick={(e) => {
+          console.log("Popover should open");
+          e.stopPropagation();
+          setIsOpen(true);
+        }}
+        onKeyPress={(e) => {
+          console.log("Popover should open");
+          e.stopPropagation();
+          setIsOpen(true);
+        }}
+      >
+        Open popover {name}
+      </button>
+      <div
+        className={classNames("vl-popover__content", {
+          "vl-popover__content--close": isOpen,
+        })}
+      >
+        <div ref={wrapperRef} className="vl-popover__content-overflow">
+          {children}
+        </div>
+        <button
+          className="vl-popover__close-btn vl-vi vl-vi-cross"
+          tabIndex="0"
+        >
+          <span className="vl-u-visually-hidden">Close popover</span>
+        </button>
+      </div>
+    </div>
+  );
+});
+
+function PopoverWithVOJavascript({ position, size, name, children }) {
+  // useEffect(() => {
+  //   // a timeout is required to make sure the popovers are present before we try to dress them
+  //   // all VO Javascript packages need to be dressed after render or they will not be activated
+  //   setTimeout(() => {
+  //     console.log("dress all via useEffect");
+  //     window.vl.popover.dressAll();
+  //   });
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      console.log("dress single via useEffect");
+      let popovers = document.getElementsByClassName("vl-popover");
+      if (popovers) window.vl.popover.dress(popovers[0]);
+    });
+  });
+
+  return (
+    <div
+      className={classNames(
+        "vl-popover",
+        "vl-popover--single",
+        popoverPositions[position] || popoverPositions.RIGHT,
+        popoverSizes[size] || popoverSizes.NORMAL
+      )}
+      data-vl-popover="true"
+      data-vl-popover-single="true"
     >
       <button
         className="vl-button vl-button--icon-before js-vl-popover__toggle vl-popover-toggle"
         type="button"
         aria-expanded="false"
+        //onClick={() => console.log("Popover should open")}
       >
-        Open popover
+        Open popover {name}
       </button>
       <div className="vl-popover__content">
         {children}
@@ -357,3 +372,10 @@ function PopoverWithVOJavascript({ forceOpen, position, size, children }) {
     </div>
   );
 }
+
+// // a timeout is required to make sure the popovers are present before we try to dress them
+// // all VO Javascript packages need to be dressed after render or they will not be activated
+// setTimeout(() => {
+//   console.log("dress outside of component");
+//   window.vl.popover.dressAll();
+// }, 100);

@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react";
 
 import "@govflanders/vl-ui-core";
@@ -24,6 +25,7 @@ export default function Popover() {
           type="button"
           aria-expanded="false"
           onClick={(e) => {
+            e.stopPropagation();
             console.log("You opened a popover!");
           }}
         >
@@ -36,6 +38,7 @@ export default function Popover() {
               <button
                 className="vl-button"
                 onClick={(e) => {
+                  e.stopPropagation();
                   console.log("You clicked yes!");
                 }}
               >
@@ -45,7 +48,10 @@ export default function Popover() {
             <li className="vl-popover__link-list__item">
               <button
                 className="vl-button vl-button--secondary"
-                onClick={() => console.log("You clicked no!")}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  console.log("You clicked no!");
+                }}
               >
                 <span className="vl-button__label">No</span>
               </button>
