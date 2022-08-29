@@ -5,6 +5,7 @@ import React, {
   useRef,
   useState,
 } from "react";
+import { Link } from "react-router-dom";
 import classNames from "classnames";
 
 import "@govflanders/vl-ui-core";
@@ -174,7 +175,26 @@ export default function PopoverModifierClasses() {
       >
         <p>
           <span>Current status: </span>
-          <span className="vl-u-mark vl-u-mark--error">Not fixed</span>
+          <span className="vl-u-mark vl-u-mark--warning">Partially fixed.</span>
+        </p>
+        <p>
+          We used{" "}
+          <span className="vl-u-text--italic">
+            window.vl.popover.dressAll()
+          </span>{" "}
+          inside the popover component. Sometimes this would work and sometimes
+          it would not. We have changed this to{" "}
+          <span className="vl-u-text--italic">
+            window.vl.popover.dress(element)
+          </span>{" "}
+          where the <span className="vl-u-text--italic">element</span> was
+          retrieved using a ref. The popover works consistently now and also
+          applies the modifier classes.
+        </p>
+        <p>
+          However, the callbacks on the buttons inside the popover are not
+          fired. See,{" "}
+          <Link to="/popover">Popover: button inside a popover</Link>
         </p>
       </div>
 
@@ -320,22 +340,10 @@ const PopoverWithRef = forwardRef(({ position, size, name, children }, ref) => {
 });
 
 function PopoverWithVOJavascript({ position, size, name, children }) {
-  // useEffect(() => {
-  //   // a timeout is required to make sure the popovers are present before we try to dress them
-  //   // all VO Javascript packages need to be dressed after render or they will not be activated
-  //   setTimeout(() => {
-  //     console.log("dress all via useEffect");
-  //     window.vl.popover.dressAll();
-  //   });
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
+  const popoverRef = useRef();
 
   useEffect(() => {
-    setTimeout(() => {
-      console.log("dress single via useEffect");
-      let popovers = document.getElementsByClassName("vl-popover");
-      if (popovers) window.vl.popover.dress(popovers[0]);
-    });
+    window.vl.popover.dress(popoverRef.current);
   });
 
   return (
@@ -348,12 +356,13 @@ function PopoverWithVOJavascript({ position, size, name, children }) {
       )}
       data-vl-popover="true"
       data-vl-popover-single="true"
+      ref={popoverRef}
     >
       <button
         className="vl-button vl-button--icon-before js-vl-popover__toggle vl-popover-toggle"
         type="button"
         aria-expanded="false"
-        //onClick={() => console.log("Popover should open")}
+        onClick={() => console.log("Popover should open")}
       >
         Open popover {name}
       </button>
@@ -372,10 +381,3 @@ function PopoverWithVOJavascript({ position, size, name, children }) {
     </div>
   );
 }
-
-// // a timeout is required to make sure the popovers are present before we try to dress them
-// // all VO Javascript packages need to be dressed after render or they will not be activated
-// setTimeout(() => {
-//   console.log("dress outside of component");
-//   window.vl.popover.dressAll();
-// }, 100);

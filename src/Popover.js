@@ -1,24 +1,24 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 import "@govflanders/vl-ui-core";
 import "@govflanders/vl-ui-util";
 import "@govflanders/vl-ui-popover";
 
 export default function Popover() {
+  const popoverRef = useRef();
+
   useEffect(() => {
-    setTimeout(() => {
-      let popovers = document.getElementsByClassName("vl-popover");
-      if (popovers) window.vl.popover.dress(popovers[0]);
-    }, 1);
+    window.vl.popover.dress(popoverRef.current);
   });
 
   function demo() {
     return (
       <div
         className="vl-popover vl-popover--single"
-        data-vl-popover
-        data-vl-popover-single
+        data-vl-popover="true"
+        data-vl-popover-single="true"
+        ref={popoverRef}
       >
         <button
           className="js-vl-popover__toggle vl-popover__toggle vl-button vl-button--icon vl-button--tertiary"
