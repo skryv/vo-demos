@@ -3,7 +3,6 @@ import { map } from "lodash";
 
 import "@govflanders/vl-ui-core";
 import "@govflanders/vl-ui-wizard";
-import "@govflanders/vl-ui-progress-bar";
 import "@govflanders/vl-ui-tooltip";
 import "@govflanders/vl-ui-util";
 
