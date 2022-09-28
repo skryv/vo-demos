@@ -8,29 +8,18 @@ import "@govflanders/vl-ui-util";
 export default function Popover() {
   const popoverRef = useRef();
 
-  function closePopover() {
-    const closeButton = document.getElementById("close-button");
-    closeButton.click();
-  }
-
   useEffect(() => {
     window.vl.popover.dress(popoverRef.current);
     const yesButton = document.getElementById("yes-button");
     yesButton.addEventListener(
       "click",
-      () => {
-        console.log("You clicked yes!");
-        closePopover();
-      },
+      () => console.log("You clicked yes!"),
       false
     );
     const noButton = document.getElementById("no-button");
     noButton.addEventListener(
       "click",
-      () => {
-        console.log("You clicked no!");
-        closePopover();
-      },
+      () => console.log("You clicked no!"),
       false
     );
   });
@@ -71,7 +60,6 @@ export default function Popover() {
           <button
             className="vl-popover__close-btn vl-vi vl-vi-cross"
             tabIndex="0"
-            id="close-button"
           >
             <span className="vl-u-visually-hidden">Close popover</span>
           </button>
