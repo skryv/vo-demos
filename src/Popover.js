@@ -2,26 +2,14 @@
 import React, { useEffect, useRef } from "react";
 
 import "@govflanders/vl-ui-core";
-import "@govflanders/vl-ui-popover";
 import "@govflanders/vl-ui-util";
+import "@govflanders/vl-ui-popover";
 
 export default function Popover() {
   const popoverRef = useRef();
 
   useEffect(() => {
     window.vl.popover.dress(popoverRef.current);
-    const yesButton = document.getElementById("yes-button");
-    yesButton.addEventListener(
-      "click",
-      () => console.log("You clicked yes!"),
-      false
-    );
-    const noButton = document.getElementById("no-button");
-    noButton.addEventListener(
-      "click",
-      () => console.log("You clicked no!"),
-      false
-    );
   });
 
   function demo() {
@@ -47,12 +35,24 @@ export default function Popover() {
         <div className="vl-popover__content">
           <ul className="vl-popover__link-list">
             <li className="vl-popover__link-list__item">
-              <button id="yes-button" className="vl-button">
+              <button
+                className="vl-button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  console.log("You clicked yes!");
+                }}
+              >
                 <span className="vl-button__label">Yes</span>
               </button>
             </li>
             <li className="vl-popover__link-list__item">
-              <button id="no-button" className="vl-button vl-button--secondary">
+              <button
+                className="vl-button vl-button--secondary"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  console.log("You clicked no!");
+                }}
+              >
                 <span className="vl-button__label">No</span>
               </button>
             </li>
@@ -107,7 +107,8 @@ export default function Popover() {
         <p>
           <span>Current status: </span>
           <span className="vl-u-mark vl-u-mark--warning">
-            Workaround by adding eventListeners after the dress takes place
+            Workaround by not using the VO Javascript, but only their styling.
+            Not ideal, because we use some of their internal classes.
           </span>
         </p>
       </div>
