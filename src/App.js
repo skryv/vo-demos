@@ -11,6 +11,7 @@ import SelectWithoutDefaultValue from "./SelectWithoutDefaultValue";
 import Tooltips from "./Tooltips";
 import Popover from "./Popover";
 import PopoverModifierClasses from "./PopoverModifierClasses";
+import ModalPadding from "./ModalPadding";
 
 function App() {
   return (
@@ -51,6 +52,9 @@ function App() {
                 Popover: modifier classes
               </Link>
             </li>
+            <li>
+              <Link to="/modal-padding">Modal: padding</Link>
+            </li>
           </ul>
         </nav>
         <Switch>
@@ -87,6 +91,11 @@ function App() {
           <Route path="/tooltips">
             <ContentWrapper>
               <Tooltips />
+            </ContentWrapper>
+          </Route>
+          <Route path="/modal-padding">
+            <ContentWrapper>
+              <ModalPadding />
             </ContentWrapper>
           </Route>
           <Route path="/">

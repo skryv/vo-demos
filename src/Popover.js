@@ -33,30 +33,27 @@ export default function Popover() {
           <span className="vl-u-visually-hidden">Are you sure?</span>
         </button>
         <div className="vl-popover__content">
-          <ul className="vl-popover__link-list">
-            <li className="vl-popover__link-list__item">
-              <button
-                className="vl-button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  console.log("You clicked yes!");
-                }}
-              >
-                <span className="vl-button__label">Yes</span>
-              </button>
-            </li>
-            <li className="vl-popover__link-list__item">
-              <button
-                className="vl-button vl-button--secondary"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  console.log("You clicked no!");
-                }}
-              >
-                <span className="vl-button__label">No</span>
-              </button>
-            </li>
-          </ul>
+          <div className="vl-action-group vl-action-group--align-right vl-u-spacer-top--xsmall">
+            <button
+              className="vl-button"
+              onClick={(e) => {
+                debugger;
+                e.stopPropagation();
+                console.log("You clicked yes!");
+              }}
+            >
+              <span className="vl-button__label">Yes</span>
+            </button>
+            <button
+              className="vl-button vl-button--secondary"
+              onClick={(e) => {
+                e.stopPropagation();
+                console.log("You clicked no!");
+              }}
+            >
+              <span className="vl-button__label">No</span>
+            </button>
+          </div>
           <button
             className="vl-popover__close-btn vl-vi vl-vi-cross"
             tabIndex="0"
