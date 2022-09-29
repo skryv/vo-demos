@@ -43,6 +43,9 @@ function App() {
               <Link to="/double-modal">
                 Double modal: a modal that opens on top of a modal
               </Link>
+            </li>
+            <li>
+              <Link to="/modal-padding">Modal: padding</Link>
             </li> */}
             <li>
               <Link to="/popover">Popover: button inside a popover</Link>
@@ -51,9 +54,6 @@ function App() {
               <Link to="/popover-modifier-classes">
                 Popover: modifier classes
               </Link>
-            </li>
-            <li>
-              <Link to="/modal-padding">Modal: padding</Link>
             </li>
           </ul>
         </nav>
