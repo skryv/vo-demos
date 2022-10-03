@@ -175,7 +175,7 @@ export default function PopoverModifierClasses() {
       >
         <p>
           <span>Current status: </span>
-          <span className="vl-u-mark vl-u-mark--warning">Partially fixed.</span>
+          <span className="vl-u-mark vl-u-mark--success">Fixed.</span>
         </p>
         <p>
           We used{" "}
@@ -190,11 +190,6 @@ export default function PopoverModifierClasses() {
           where the <span className="vl-u-text--italic">element</span> was
           retrieved using a ref. The popover works consistently now and also
           applies the modifier classes.
-        </p>
-        <p>
-          However, the callbacks on the buttons inside the popover are not
-          fired. See,{" "}
-          <Link to="/popover">Popover: button inside a popover</Link>
         </p>
       </div>
 

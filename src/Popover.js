@@ -37,7 +37,6 @@ export default function Popover() {
             <button
               className="vl-button"
               onClick={(e) => {
-                debugger;
                 e.stopPropagation();
                 console.log("You clicked yes!");
               }}
@@ -103,9 +102,8 @@ export default function Popover() {
       >
         <p>
           <span>Current status: </span>
-          <span className="vl-u-mark vl-u-mark--warning">
-            Workaround by not using the VO Javascript, but only their styling.
-            Not ideal, because we use some of their internal classes.
+          <span className="vl-u-mark vl-u-mark--success">
+            Fixed in @govflanders/vl-ui-popover v15.0.0
           </span>
         </p>
       </div>
