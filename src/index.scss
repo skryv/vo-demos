@@ -16,6 +16,10 @@ $vl-font-location: "~@govflanders/vl-ui-core/dist/font/flanders/";
 @import "~@govflanders/vl-ui-popover/src/scss/popover";
 @import "~@govflanders/vl-ui-link/src/scss/link";
 @import "~@govflanders/vl-ui-link-list/src/scss/link-list";
+@import "~@govflanders/vl-ui-datepicker/src/scss/datepicker";
+@import "~@govflanders/vl-ui-input-field/src/scss/input-field";
+@import "~@govflanders/vl-ui-input-addon/src/scss/input-addon";
+@import "~@govflanders/vl-ui-input-group/src/scss/input-group";
 
 // ...close with utils
 @import "~@govflanders/vl-ui-util/src/scss/util";

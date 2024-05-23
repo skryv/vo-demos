@@ -5,7 +5,6 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { Link } from "react-router-dom";
 import classNames from "classnames";
 
 import "@govflanders/vl-ui-core";
