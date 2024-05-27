@@ -12,6 +12,7 @@ import Tooltips from "./Tooltips";
 import Popover from "./Popover";
 import PopoverModifierClasses from "./PopoverModifierClasses";
 import ModalPadding from "./ModalPadding";
+import DatePicker from "./DatePicker";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
       <div>
         <nav style={{ margin: "3rem" }}>
           <ul>
-            {/* <li>
+            {
+              /* <li>
               <Link to="/select-without-default-value">
                 Select: the first item in the list is by default always selected
               </Link>
@@ -54,10 +56,29 @@ function App() {
               <Link to="/popover-modifier-classes">
                 Popover: modifier classes
               </Link>
-            </li> */}
+            </li> */
+              <li>
+                <Link to="/date-picker">Datepicker</Link>
+              </li>
+            }
           </ul>
         </nav>
         <Switch>
+          <Route path="/date-picker">
+            <ContentWrapper>
+              <p
+                style={{
+                  marginBottom: "5rem",
+                }}
+              >
+                Problem: If you have multiple datepickers, you get a console
+                error: cannot read properties of undefined (reading 'mode').
+                Please open your console, pick a date, and the error will occur.
+              </p>
+              <DatePicker />
+              <DatePicker />
+            </ContentWrapper>
+          </Route>
           <Route path="/popover-modifier-classes">
             <ContentWrapper>
               <PopoverModifierClasses />
