@@ -66,6 +66,16 @@ function App() {
         <Switch>
           <Route path="/date-picker">
             <ContentWrapper>
+              <p
+                style={{
+                  marginBottom: "5rem",
+                }}
+              >
+                Problem: If you have multiple datepickers, you get a console
+                error: cannot read properties of undefined (reading 'mode').
+                Please open your console, pick a date, and the error will occur.
+              </p>
+              <DatePicker />
               <DatePicker />
             </ContentWrapper>
           </Route>
